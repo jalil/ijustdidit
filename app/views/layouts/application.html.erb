@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ijustdidit</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <style>
+      body {
+                padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+                      }
+                          </style>
+</head>
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+          <div class="container-fluid">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <%=link_to "I DID IT HERE!", posts_path, class: "brand"%>
+            <div class="nav-collapse collapse">
+              <p class="navbar-text pull-right">
+  
+  
+              <% if user_signed_in? %>
+      Logged in as <strong><%= current_user.email %></strong>.
+    <%= link_to 'Edit profile', edit_user_registration_path %> |
+    <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+  <% else %>
+  <%= link_to "Sign up", new_user_registration_path %> |
+  <%= link_to "Login", new_user_session_path %>
+<% end %>
+
+              </p>
+              <ul class="nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><%=link_to "New Post", new_post_path %></li>
+                <li><a href="#contact">Contact</a></li>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div>
+        </div>
+      </div>
+
+
+
+<%= yield %>
+
+</body>
+</html>

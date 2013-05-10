@@ -1,0 +1,13 @@
+<div class="container" >
+<%=form_for @post do |f| %>
+  <%=f.label  "Title" %>
+  <%=f.text_field :title %></br>
+  <%=f.label  "Positions" %>
+  <%=f.text_field :tag_list %></br>
+  <%=f.label  "Address" %>
+  <%=f.text_field :address %></br>
+  <%=f.label  "Description" %>
+  <%=f.text_area :description, :size => "20x5"%></br>
+  <%=f.submit "Submit" %>
+<%end%>
+</div>

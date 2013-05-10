@@ -1,0 +1,12 @@
+<div class="container">
+  <p>
+  <h3> <%=@post.title %> </h3>
+  <p>
+  <strong> Positions</strong>: <i><%=link_to "#{@post.tag_list}", "" %></br></i>
+  <p>
+  <strong>Location</strong>:<i> <%=@post.address %></i></br>
+  <p>
+  <%=@post.description %></br>
+  <p>
+  <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@post.latitude}%2C#{@post.longitude}" %>
+<div >
