@@ -9,6 +9,8 @@ gem "twitter-bootstrap-rails"
 gem "faker"
 gem "devise"
 gem "acts-as-taggable-on"
+gem 'haml'
+gem 'annotate'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

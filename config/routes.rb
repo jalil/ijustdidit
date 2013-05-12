@@ -3,6 +3,7 @@ Ijustdidit::Application.routes.draw do
 
   resources :locations
   resources :posts
+  get 'tags/:tag', to: 'posts#show', as: :tag
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

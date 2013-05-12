@@ -30,6 +30,8 @@ GEM
       multi_json (~> 1.0)
     acts-as-taggable-on (2.3.1)
       rails (~> 3.0)
+    annotate (2.5.0)
+      rake
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
     builder (3.0.4)
@@ -54,6 +56,8 @@ GEM
     faker (1.1.2)
       i18n (~> 0.5)
     geocoder (1.1.8)
+    haml (4.0.2)
+      tilt
     hike (1.2.2)
     i18n (0.6.4)
     journey (1.0.4)
@@ -149,11 +153,13 @@ PLATFORMS
 
 DEPENDENCIES
   acts-as-taggable-on
+  annotate
   coffee-rails (~> 3.2.1)
   devise
   fabrication
   faker
   geocoder
+  haml
   jquery-rails
   less-rails
   rails (= 3.2.11)

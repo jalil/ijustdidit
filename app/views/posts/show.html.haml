@@ -1,0 +1,12 @@
+%h3= @post.title 
+%p
+%strong
+ Positions:
+ %small= @post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')
+%br 
+%strong 
+ =@post.address
+%br 
+=@post.description
+%br
+=image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@post.latitude}%2C#{@post.longitude}"

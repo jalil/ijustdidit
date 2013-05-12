@@ -26,4 +26,8 @@ describe PostsController  do
       response.should render_template :index
     end
   end
+
+  describe "GET #show" do
+   it " 
+  end
 end
