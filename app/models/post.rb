@@ -15,11 +15,14 @@
 #
 
 class Post <  ActiveRecord::Base
-  attr_accessible :title,:user_id,  :style, :description, :address, :location_id, :tag_list
-  acts_as_taggable
+   attr_accessible :recommendation, :title,:user_id,  :style, :description, :address, :location_id, :tag_list, :city, :state
+   acts_as_taggable
    belongs_to :location 
    belongs_to :user
    validates :address, :title,:description, :presence => true
    geocoded_by :address
-   after_validation :geocode
+   after_validation :geocode, :if => :address_changed?
+   paginates_per 10
+
+   has_many :comments
 end
